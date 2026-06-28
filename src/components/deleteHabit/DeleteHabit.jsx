@@ -11,8 +11,8 @@ const DeleteHabit = ({id}) => {
     }
   return (
     <div>
-       <button onClick={handleDelete}>
-        <RiDeleteBin6Line className="text-red-500 text-xl hover:text-red-600 cursor-pointer"/>
+       <button onClick={handleDelete} className="delete-habit-btn" aria-label="Delete habit">
+        <RiDeleteBin6Line className="delete-habit-icon"/>
        </button>
     </div>
   )

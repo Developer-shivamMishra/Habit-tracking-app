@@ -8,6 +8,8 @@ const HabbitContext = ({children}) => {
       const saved = localStorage.getItem("habits")
       return saved ? JSON.parse(saved) : []
     })
+
+    const monthkey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`
     const [showModel,setShowModel] = useState(false)
 
   const totaldays = new Date(
@@ -23,20 +25,14 @@ const HabbitContext = ({children}) => {
             currentDate.getMonth()-1,1
         ))
     }
-    const NextMonth = ()=>{
- 
-        setCurrentDate(new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth() +1 ,1
-        ))
-
-        setHabits(
-          habits.map((habit)=>({
-          ...habit, completeDays: []
-          }))
-        )
-    }
-
+   const NextMonth = ()=>{
+    setCurrentDate(
+      new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1 ,1
+      )
+    )
+   }
      const days = Array.from(
         {length:totaldays},
         (_,index) => index +1
@@ -50,7 +46,7 @@ const HabbitContext = ({children}) => {
   return (
     <div>
       <HabbitProvider.Provider value={{
-        currentDate,setCurrentDate,NextMonth,PrevMonth,totaldays,habits,setHabits,showModel,setShowModel,days
+        currentDate,setCurrentDate,NextMonth,PrevMonth,totaldays,habits,setHabits,showModel,setShowModel,days,monthkey
       }}>
 {children}
       </HabbitProvider.Provider>

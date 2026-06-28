@@ -3,10 +3,12 @@ import StatCard from "../StatCard/StatCard";
 import { HabbitProvider } from "../context/HabbitContext";
 
 const StatsCard = () => {
-  const {habits,totaldays} = useContext(HabbitProvider);
+  const {habits,totaldays ,currentDate,monthkey} = useContext(HabbitProvider);
+  
+ 
 
   const completedDays = habits.reduce((total,habit)=>{
-return total + habit.completeDays.length;
+return total + (habit.completeDays[monthkey] ?.length || 0)
 
   },0)
 
@@ -16,7 +18,7 @@ return total + habit.completeDays.length;
   return (
     <div className="stats-row">
       <StatCard title="Habits" value={habits.length} />
-      <StatCard title="Done" value={completedDays} />
+      <StatCard title="Days Done" value={completedDays} />
       <StatCard title="Month Avg" value={`${avg}%`} />
     </div>
   );

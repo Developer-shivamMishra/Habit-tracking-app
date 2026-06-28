@@ -1,15 +1,9 @@
-import React, { useContext } from 'react'
-import { HabbitProvider } from '../context/HabbitContext'
+import React, { useContext } from "react";
+import { HabbitProvider } from "../context/HabbitContext";
 
-const DayCell = ({day}) => {
+const DayCell = ({ day }) => {
+  const { totaldays, days } = useContext(HabbitProvider);
 
-    const {totaldays,days} = useContext(HabbitProvider)
-   
-
-
-   
-   
-    
   return (
     <div className="day-cell-wrapper">
       <div className="day-cell-grid">
@@ -20,7 +14,7 @@ const DayCell = ({day}) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DayCell
+export default DayCell;
