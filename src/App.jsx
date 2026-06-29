@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import MonthHeader from "./components/monthheader/MonthHeader";
-
+import { Analytics } from "@vercel/analytics/next"
 import StatsCard from "./components/statsCard/StatsCard";
 // import CalenderHeader from "./components/CalenderHeader/CalenderHeader";
 import DayCell from "./components/dayCell/DayCell";
