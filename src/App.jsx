@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MonthHeader from "./components/monthheader/MonthHeader";
 
-import StatsCard from "./components/statscard/StatsCard";
+import StatsCard from "./components/statsCard/StatsCard";
 // import CalenderHeader from "./components/CalenderHeader/CalenderHeader";
 import DayCell from "./components/dayCell/DayCell";
 import AddHabit from "./components/AddHabit/AddHabit";

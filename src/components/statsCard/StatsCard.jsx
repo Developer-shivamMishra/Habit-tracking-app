@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import StatCard from "../statcard/StatCard";
+import StatCard from "../statCard/StatCard";
 import { HabbitProvider } from "../context/HabbitContext";
 
 const StatsCard = () => {
