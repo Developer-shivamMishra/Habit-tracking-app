@@ -18,13 +18,6 @@
   }
 }
 
-@media (max-width: 768px) and (min-width: 481px) {
-  .theme-toggle-btn {
-    padding: 6px 12px;
-    font-size: 18px;
-  }
-}
-
 .theme-toggle-btn.dark {
   color: white;
   background-color: rgba(30, 41, 59, 0.6);
