@@ -11,6 +11,20 @@
   font-size: 24px;
 }
 
+@media (max-width: 480px) {
+  .theme-toggle-btn {
+    padding: 6px 12px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .theme-toggle-btn {
+    padding: 7px 14px;
+    font-size: 20px;
+  }
+}
+
 .theme-toggle-btn.dark {
   color: white;
   background-color: rgba(30, 41, 59, 0.6);
