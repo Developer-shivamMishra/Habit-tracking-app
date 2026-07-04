@@ -14,10 +14,11 @@ const App = () => {
 
   return (
     <main className="w-full h-full">
-      <div className="app-layout">
-        <div className="w-full flex justify-end pr-2 sm:pr-4 md:pr-6 fixed top-2 sm:top-4 z-50">
+      <div className="w-full flex justify-end pr-2 sm:pr-4 md:pr-6 fixed top-2 sm:top-4 z-50">
             <ThemeToggle />
         </div>
+      <div className="app-layout">
+        
         <div className="flex justify-center w-full">
           <MonthHeader />
         

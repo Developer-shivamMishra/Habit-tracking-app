@@ -5,7 +5,7 @@ import HabbitContext, { HabbitProvider } from "../context/HabbitContext";
 const MonthHeader = () => {
   const { currentDate, PrevMonth, NextMonth } = useContext(HabbitProvider);
   return (
-    <div className="w-full sm:w-3/4 md:w-1/2 text-white flex justify-around items-center mt-4 px-4 fixed">
+    <div className="w-full sm:w-3/4 sm:mt-5  sm md:w-1/2 text-white flex justify-around items-center mt-4 px-4 fixed">
       <button
         onClick={PrevMonth}
         className="month-nav-btn month-nav-btn-left border-2 border-[#87858522] bg-[#87858522] p-1 sm:p-2 rounded"
