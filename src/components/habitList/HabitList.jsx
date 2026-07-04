@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { HabbitProvider } from "../context/HabbitContext";
 import DeleteHabit from "../deleteHabit/DeleteHabit";
+// import { MdOutlineEdit } from "react-icons/md";
 
 const HabitList = () => {
   const { habits, setHabits, days, currentDate, monthkey } =
     useContext(HabbitProvider);
+
+  // const [isEditingId, setIsEditingId] = useState(null);
+  // const [editName, setEditName] = useState("");
 
   const handleClick = (habitId, day) => {
     setHabits(
@@ -33,7 +37,28 @@ const HabitList = () => {
       {habits.map((habit) => (
         <div key={habit.id} className="habit-card">
           <div className="habit-card-header">
-            <h2 style={{ color: habit.color || "#fff" }}>{habit.name}</h2>
+            <div style={{ color: habit.color || "#fff" }}>
+              <h1 className="font-[3rem]">{habit.name}</h1>
+              {/* {isEditingId === habit.id ? (
+                <input
+                  type="text"
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                />
+               
+              
+              ) : (
+                <h2>{habit.name}</h2>
+              )} */}
+            </div>
+            {/* <button className="cursor-pointer"
+              onClick={() => {
+                setIsEditingId(habit.id)
+                setEditName(habit.name);
+              }}
+            >
+              <MdOutlineEdit  />
+            </button> */}
             <DeleteHabit id={habit.id} />
           </div>
 

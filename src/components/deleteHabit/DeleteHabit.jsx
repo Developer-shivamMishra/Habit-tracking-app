@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { HabbitProvider } from '../context/HabbitContext';
+
 const DeleteHabit = ({id}) => {
 
     const {habits,setHabits} = useContext(HabbitProvider);
@@ -11,7 +12,8 @@ const DeleteHabit = ({id}) => {
     }
   return (
     <div>
-       <button onClick={handleDelete} className="delete-habit-btn" aria-label="Delete habit">
+       <button onClick={handleDelete} className="delete-habit-btn flex gap-10" aria-label="Delete habit ">
+      
         <RiDeleteBin6Line className="delete-habit-icon"/>
        </button>
     </div>

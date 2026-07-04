@@ -3,6 +3,9 @@ import React, { createContext, useEffect, useState } from 'react'
 export const HabbitProvider = createContext()
 
 const HabbitContext = ({children}) => {
+  const [theme,setTheme] = useState(()=>{
+    return localStorage.getItem("theme") || "dark"
+  })
     const [currentDate,setCurrentDate] = useState(new Date())
     const [habits,setHabits] = useState(() => {
       const saved = localStorage.getItem("habits")
@@ -43,10 +46,20 @@ const HabbitContext = ({children}) => {
       localStorage.setItem("habits" ,JSON.stringify(habits))
     },[habits])
 
+    useEffect(() => {
+  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute('data-theme', theme)
+  document.body.className = theme
+}, [theme]);
+
+useEffect(() => {
+  document.body.className = theme
+  document.documentElement.setAttribute('data-theme', theme)
+}, []);
   return (
     <div>
       <HabbitProvider.Provider value={{
-        currentDate,setCurrentDate,NextMonth,PrevMonth,totaldays,habits,setHabits,showModel,setShowModel,days,monthkey
+        currentDate,setCurrentDate,NextMonth,PrevMonth,totaldays,habits,setHabits,showModel,setShowModel,days,monthkey ,theme,setTheme
       }}>
 {children}
       </HabbitProvider.Provider>

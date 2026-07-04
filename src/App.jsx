@@ -7,14 +7,20 @@ import DayCell from "./components/dayCell/DayCell";
 import AddHabit from "./components/AddHabit/AddHabit";
 import HabitList from "./components/habitList/HabitList";
 import { HabbitProvider } from "./components/context/HabbitContext";
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 
 const App = () => {
-  const { habits, setHabits } = useContext(HabbitProvider);
+  const { habits, setHabits ,theme } = useContext(HabbitProvider);
+
   return (
-    <main className="w-full h-full text-white">
+    <main className="w-full h-full">
       <div className="app-layout">
+        <div className="w-full flex justify-end pr-6 fixed top-4 right-0 z-50">
+            <ThemeToggle />
+        </div>
         <div className="flex justify-center w-full">
           <MonthHeader />
+        
         </div>
         <StatsCard />
         {habits.length > 0 && <HabitList />}
